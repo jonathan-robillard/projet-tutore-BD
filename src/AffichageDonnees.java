@@ -93,17 +93,6 @@ public class AffichageDonnees {
         cs.close();
 	}
 	
-	public void affichageStatistiques(int nbAnnees, int annee) throws SQLException{
-		
-		
-		cs = c.prepareCall("{? = CALL nbEtudiantSansStageAnnee(?)}");
-        cs.setInt(2, annee);
-        cs.registerOutParameter(1, Types.INTEGER);
-        cs.execute();
-        //System.out.print("le nombre d'étudiants sans stage en " + annee + " : " + cs.getInt(1));
-        
-        cs.close();
-	}
 
 	public static void main(String[] args) throws SQLException{
 		
@@ -120,13 +109,6 @@ public class AffichageDonnees {
 		
 		System.out.println("Saisissez un nombre d'annees : ");
 		affichage.contactsEntreprises(saisie.entier());
-		
-		//affichage.affichageStatistiques(2, 2015);  ERREURS
-		
-		
-		
-		
-		
-        
+		        
     }
 }
